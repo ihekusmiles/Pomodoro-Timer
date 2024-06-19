@@ -35,6 +35,7 @@ def start_timer():
     short_break_sec = SHORT_BREAK_MIN * 60
     long_break_sec = LONG_BREAK_MIN * 60
     reps += 1
+    reset_button.config(state="normal") # Enable reset button after starting timer
 
     if reps == 8:
         count_down(long_break_sec)
@@ -115,6 +116,7 @@ start_button.grid(column=0, row=2)
 
 reset_button = Button(text="Reset", bg="White", command=reset_timer)
 reset_button.grid(column=2, row=2)
+reset_button.config(state="disabled") # Disabled before running timer
 
 '''Main loop is listening all the time for inputs/buttons/etc'''
 
